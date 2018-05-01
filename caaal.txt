@@ -1,0 +1,61 @@
+#!/bin/bash
+ 
+ 
+function addition()
+{
+     
+    addition=$(($1+$2))
+    echo "addition est= $addition"
+     
+    return 1;
+}
+ 
+function soustraction()
+{
+     
+    soustraction=$(($1-$2))
+    echo "soustraction= $soustraction"
+     
+    return 1;
+}
+function multiplication()
+{
+     
+     
+    multiplication=$(($1*$2))
+    echo "multiplication= $multiplication"
+     
+    return 1;
+}
+
+function division()
+{
+     
+     
+    division=$(($1/$2))
+    echo "div= $division"
+     
+    return 1;
+}
+ 
+for ((i=1;i<=$#;i++)) do
+{
+     
+     
+    if   test ${!i} = "+"
+    then
+            addition $1 $3
+    elif  test ${!i} = "-"
+    then
+            soustraction $1 $3
+    elif  test ${!i} = "X"
+    then
+            multiplication $1 $3
+ 
+    elif test ${!i} = "/"
+    then
+            division $1 $3
+     
+    fi
+}
+done
