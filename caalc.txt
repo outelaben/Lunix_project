@@ -1,0 +1,35 @@
+#!/bin/bash
+ 
+function verification
+{
+for ((i=1;i<=$#;i++)) do
+{
+    local ereur=0
+    if test ${!i} == "("
+    then
+        echo "para ouvrante";
+        else if   test ${!i} = "+"
+        then
+            echo "somme";
+        else if  test ${!i} = "-"
+        then
+            echo "soustracion";
+        else if  test ${!i} = "X"
+        then
+            echo "Muliplication";
+ 
+        else if test ${!i} = "/"
+        then
+            echo "Division";
+        else if  test ${!i} = ")"
+        then
+            echo "para fermante";
+        else
+            echo "entier";
+   
+}
+done
+return 1;
+}
+ 
+verif $*
